@@ -1,0 +1,38 @@
+#!/bin/bash
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/keyb1nd/go/bin
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+shopt -s expand_aliases
+alias ..="cd .."
+alias ...="cd ..;cd .."
+alias ....="cd ..;cd ..;cd .."
+alias ls="ls -lahF --color=auto"
+alias tn="tmux new -s $1"
+alias td="tmux detach"
+alias ta="tmux attach -d -t $1"
+alias tl="tmux ls"
+alias tnw="tmux new-window;tmux rename-window $1"
+alias v="nvim"
+
+alias gaa="git add --all"
+alias gca="git commit -am $1"
+alias gp="git push"
+alias gs="gis status"
+alias gl="git log"
+alias gb="gBranch"
+gBranch(){
+	git branch $1
+	git checkout $1
+}
+# alias grs="gh repo sync $1 -b master"
+alias grs="syncRepo"
+syncRepo() {
+	gh repo sync "$1" -b "master"
+	echo "do not forget to git pull"
+}
