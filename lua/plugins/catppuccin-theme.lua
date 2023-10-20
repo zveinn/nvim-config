@@ -4,39 +4,49 @@ if not present then return end
 vim.opt.termguicolors = true
 
 catppuccin.setup {
-	flavour = "mocha",
+	flavour = "macchiato",
 	term_colors = true,
+  background = { -- :h background
+        light = "macchiato",
+        dark = "macchiato",
+  },
 	transparent_background = false,
 	no_italic = false,
 	no_bold = false,
 	styles = {
 		comments = { "italic" },
-		conditionals = {},
-		loops = {},
-		functions = { "italic" },
+		conditionals = { "bold"},
+		loops = { },
+		functions = { "bold" },
 		keywords = {},
-		strings = {},
+		strings = {"bold"},
 		variables = {},
 		numbers = {},
 		booleans = {},
 		properties = {},
 		types = { "bold" },
 	},
-	color_overrides = {
-		mocha = {
-			base = "#171717", -- background
-      surface2 = "#9A9A9A", -- comments
-      text = "#F6F6F6",
-		},
-	},
+  integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+        notify = false,
+        mini = {
+            enabled = true,
+            indentscope_color = "",
+        },
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    },
 	highlight_overrides = {
-		mocha = function(C)
+		macchiato = function(C)
 			return {
 				NvimTreeNormal = { bg = C.none },
 				CmpBorder = { fg = C.surface2 },
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
 				TelescopeBorder = { link = "FloatBorder" },
+        GitSignsChangeLn = { bg = C.base },
 			}
 		end,
 	},

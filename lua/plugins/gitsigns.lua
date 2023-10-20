@@ -4,12 +4,12 @@ if not setup then return end
 
 gitsigns.setup {
 	signs                        = {
-		add          = { text = 'A' },
-		change       = { text = 'M' },
-		delete       = { text = 'D' },
-		topdelete    = { text = 'TD' },
-		changedelete = { text = 'CD' },
-		untracked    = { text = 'U' },
+		add          = { text = 'A', show_count = true },
+		change       = { text = 'M', show_count = true},
+		delete       = { text = 'D', show_count = true },
+		topdelete    = { text = 'TD', show_count = true },
+		changedelete = { text = 'CD', show_count = true },
+		untracked    = { text = 'U', show_count = true },
 	},
 	signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`
 	numhl                        = true, -- Toggle with `:Gitsigns toggle_numhl`
