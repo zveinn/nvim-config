@@ -17,8 +17,8 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
-local HEIGHT_RATIO = 0.8 -- You can change this
-local WIDTH_RATIO = 0.5  -- You can change this too
+local HEIGHT_RATIO = 1 -- You can change this
+local WIDTH_RATIO = 0.2  -- You can change this too
 
 nvimtree.setup({
   disable_netrw = true,
@@ -28,16 +28,28 @@ nvimtree.setup({
   diagnostics = {
 		enable = true,
 	},
+  git = {
+    enable = true,
+  },
 	renderer = {
-		group_empty = true,
+		group_empty = false,
+    full_name = true,
+    indent_width = 1,
+    special_files = { "go.mod", ".git", ".gitignore"},
+    highlight_git = true,
+    highlight_modified = "icon",
+    icons = {
+      padding = "|",
+    }
 	},
 	filters = {
-		dotfiles = true,
+		dotfiles = false,
 	},
   view = {
-    relativenumber = true,
+    side = "right",
+    signcolumn = "no",
     float = {
-      enable = true,
+      enable = false,
       open_win_config = function()
         local screen_w = vim.opt.columns:get()
         local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
@@ -49,8 +61,6 @@ nvimtree.setup({
         local center_y = ((vim.opt.lines:get() - window_h) / 2)
                          - vim.opt.cmdheight:get()
         return {
-          border = "rounded",
-          relative = "editor",
           row = center_y,
           col = center_x,
           width = window_w_int,

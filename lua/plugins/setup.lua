@@ -22,7 +22,6 @@ return require("packer").startup(function()
   -- Look and Feel
   use { "catppuccin/nvim", as = "catppuccin" } -- https://github.com/catppuccin/nvim
 
-  use {"L3MON4D3/LuaSnip", requires = {"rafamadriz/friendly-snippets"}}
   -- Productivity
   use "nvim-lualine/lualine.nvim"       -- https://github.com/nvim-lualine/lualine.nvim
   use {
@@ -31,6 +30,7 @@ return require("packer").startup(function()
       "nvim-tree/nvim-web-devicons",    -- https://github.com/nvim-tree/nvim-web-devicons
     },
   }
+  use {"AndrewRadev/splitjoin.vim"}
   use {
     "nvim-telescope/telescope-fzf-native.nvim", -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
     run = "make",
@@ -62,6 +62,9 @@ return require("packer").startup(function()
   use "williamboman/nvim-lsp-installer"     -- https://github.com/williamboman/nvim-lsp-installer
   use "numToStr/Comment.nvim"               -- https://github.com/numToStr/Comment.nvim
   use { "kylechui/nvim-surround", tag = "*" }  -- https://github.com/kylechui/nvim-surround
+  use "windwp/nvim-autopairs"
+  use {"L3MON4D3/LuaSnip", requires = {"rafamadriz/friendly-snippets"}}
+  use { 'saadparwaiz1/cmp_luasnip' }
 
   if packer_bootstrap then
     require("packer").sync()

@@ -19,6 +19,9 @@ vim.keymap.set('n', '<S-k>', '<C-w>k')
 vim.keymap.set('n', '<A-j>', '<C-d>')
 vim.keymap.set('n', '<A-k>', '<C-u>')
 
+vim.keymap.set('n', '<A-1>', ':SplitjoinJoin<cr>')
+vim.keymap.set('n', '<A-2>', ':SplitjoinSplit<cr>')
+
 
 -- vim.keymap.set({ 'n', 'i' }, '<A-s>', '<esc> :w<cr> :!goimports -w % <cr><cr>') -- Source config
 vim.keymap.set({ 'n', 'i' }, '<A-s>', '<esc> :w<cr>') -- Source config

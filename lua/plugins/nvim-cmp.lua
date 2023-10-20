@@ -10,6 +10,9 @@ if not lspconfig_setup then return end
 local cmp_nvim_lsp_setup, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_setup then return end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
@@ -18,6 +21,8 @@ cmp.setup {
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
+			-- luasnip.available(args.body)
+			-- luasnip.snip_expand(args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert {
@@ -55,8 +60,52 @@ cmp.setup {
 	},
 }
 
+-- cmp.setup {
+--   formatting = {
+--     format = lspkind.cmp_format({
+--       mode = "symbol_text",
+--       maxwidth = 50,
+--
+--       before = function(entry, vim_item)
+--         return vim_item
+--       end
+--     })
+--   }
+-- }
+--
+local s = luasnip.snippet
+local t = luasnip.text_node
+local i = luasnip.insert_node
+luasnip.add_snippets("all", {
+	s("s", {
+		t({ "type " }), i(1), t({ " struct {", "\t", "}" }),
+	})
+})
+luasnip.add_snippets("all", {
+	s("e", {
+		t({ "if err != nil {", '\treturn err', "}" }),
+	})
+})
+luasnip.add_snippets("all", {
+	s("eee", {
+		t({ "if err != nil {", '\treturn err', "}" }),
+	})
+})
 
-local capabilities = cmp_nvim_lsp.default_capabilities()
+luasnip.add_snippets("go", {
+	s("d", {
+		t(
+			{ "defer func(){"
+			, "\tr := recover()"
+			, "\tif r != nil {"
+			, "\t\tlog.Println(r, string(debug.Stack()))"
+			, "\t}"
+			, "}()"
+			})
+	})
+})
+
+-- local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
@@ -203,17 +252,5 @@ lspconfig['gopls'].setup {
   },
 }
 
-lspconfig['pyright'].setup{}
+-- lspconfig['pyright'].setup{}
 
-cmp.setup {
-  formatting = {
-    format = lspkind.cmp_format({
-      mode = "symbol_text",
-      maxwidth = 50,
-
-      before = function(entry, vim_item)
-        return vim_item
-      end
-    })
-  }
-}

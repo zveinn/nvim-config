@@ -1,9 +1,9 @@
 local setup, treesitter = pcall(require, "nvim-treesitter.configs")
 if not setup then return end
 
-vim.opt.foldmethod="expr"
-vim.opt.foldexpr="nvim_treesitter#foldexpr()"
-vim.opt.foldenable=false
+-- vim.opt.foldmethod="expr"
+-- vim.opt.foldexpr="nvim_treesitter#foldexpr()"
+-- vim.opt.foldenable=false
 
 treesitter.setup {
   ensure_installed = {

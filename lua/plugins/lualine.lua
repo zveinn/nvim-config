@@ -32,6 +32,7 @@ local conditions = {
 -- Config
 local config = {
 	options = {
+    globalstatus = true,
 		-- Disable sections and component separators
 		component_separators = '',
 		section_separators = '',
@@ -74,19 +75,25 @@ local function ins_right(component)
 	table.insert(config.sections.lualine_x, component)
 end
 
-ins_left { 'location' }
 
 ins_left {
 	'filename',
+  path = 2,
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = 'bold' },
 }
 
-ins_left {
-	function()
-		return "--"
-	end,
+ins_left { 
+  'location',
+	padding = { left = 0, right = 0 }, -- We don't need space before this
+	color = { fg = colors.blue, gui = 'bold' },
 }
+
+-- ins_left {
+-- 	function()
+-- 		return "|"
+-- 	end,
+-- }
 
 ins_left {
 	'branch',
@@ -98,36 +105,36 @@ ins_left {
 ins_left {
 	'diff',
 	-- Is it me or the symbol for modified us really weird
-	symbols = { added = 'A ', modified = 'M ', removed = 'R ' },
+	symbols = { added = 'a', modified = 'm', removed = 'r' },
 	diff_color = {
 		added = { fg = colors.green },
 		modified = { fg = colors.orange },
 		removed = { fg = colors.red },
 	},
-	cond = conditions.hide_in_width,
 }
 
-ins_left {
-	function()
-		return "--"
-	end,
-}
+-- ins_left {
+-- 	function()
+-- 		return "|"
+-- 	end,
+-- }
 
 ins_left {
 	'diagnostics',
 	sources = { 'nvim_diagnostic' },
-	symbols = { error = 'E ', warn = 'W ', info = 'I ', hint = 'H ' },
+	symbols = { error = 'e', warn = 'w', info = 'i', hint = 'h' },
 	diagnostics_color = {
 		color_error = { fg = colors.red },
 		color_warn = { fg = colors.yellow },
 		color_info = { fg = colors.cyan },
+		color_hint = { fg = colors.cyan },
 	},
 }
 
 ins_left {
 	-- Lsp server name .
 	function()
-		local msg = 'No Active Lsp'
+		local msg = 'NoLsp'
 		local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
 		local clients = vim.lsp.get_active_clients()
 		if next(clients) == nil then
@@ -142,13 +149,14 @@ ins_left {
 		return msg
 	end,
 	color = { fg = '#ffffff', gui = 'bold' },
+	cond = conditions.hide_in_width,
 }
 
 ins_left {
 	'o:encoding',      -- option component same as &encoding in viml
 	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-	cond = conditions.hide_in_width,
 	color = { fg = colors.green, gui = 'bold' },
+	cond = conditions.hide_in_width,
 }
 
 ins_left {
@@ -156,6 +164,7 @@ ins_left {
 	fmt = string.upper,
 	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
 	color = { fg = colors.green, gui = 'bold' },
+	cond = conditions.hide_in_width,
 }
 
 
