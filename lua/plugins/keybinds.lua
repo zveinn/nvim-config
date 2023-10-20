@@ -13,6 +13,7 @@ vim.keymap.set('n', '<C-z>', '')
 
 vim.keymap.set('n', '<S-l>', '<C-w>l')
 vim.keymap.set('n', '<S-h>', '<C-w>h')
+vim.keymap.set('n', '<S-H>', '<C-w>h')
 vim.keymap.set('n', '<S-j>', '<C-w>j')
 vim.keymap.set('n', '<S-k>', '<C-w>k')
 
