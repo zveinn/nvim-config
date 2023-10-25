@@ -25,19 +25,25 @@ catppuccin.setup {
 		booleans = {},
 		properties = {},
 		types = { "bold" },
-	},
-  integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        treesitter = true,
-        notify = false,
-        mini = {
-            enabled = true,
-            indentscope_color = "",
+	}, 
+  color_overrides = {
+        all = {
+          base = "#141414",
+          crust = "#1c1c1c"
         },
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-    },
+  },
+  -- integrations = {
+  --       cmp = true,
+  --       gitsigns = true,
+  --       nvimtree = true,
+  --       treesitter = true,
+  --       notify = false,
+  --       mini = {
+  --           enabled = true,
+  --           indentscope_color = "",
+  --       },
+  --       -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+  --   },
 	highlight_overrides = {
 		macchiato = function(C)
 			return {
@@ -46,7 +52,8 @@ catppuccin.setup {
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
 				TelescopeBorder = { link = "FloatBorder" },
-        GitSignsChangeLn = { bg = C.base },
+        GitSignsChangeLn = { bg = C.crust},
+        GitSignsAddLn = { bg = C.crust},
 			}
 		end,
 	},
