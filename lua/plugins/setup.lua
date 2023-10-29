@@ -30,7 +30,7 @@ return require("packer").startup(function()
       "nvim-tree/nvim-web-devicons",    -- https://github.com/nvim-tree/nvim-web-devicons
     },
   }
-  use {"AndrewRadev/splitjoin.vim"}
+  -- use {"AndrewRadev/splitjoin.vim"}
   use {
     "nvim-telescope/telescope-fzf-native.nvim", -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
     run = "make",
@@ -44,7 +44,7 @@ return require("packer").startup(function()
   }
 
   -- Filetypes
-  use "chrisbra/csv.vim" -- https://github.com/chrisbra/csv.vim
+  -- use "chrisbra/csv.vim" -- https://github.com/chrisbra/csv.vim
 
   -- Development
   use "lewis6991/gitsigns.nvim"             -- https://github.com/lewis6991/gitsigns.nvim
@@ -52,16 +52,16 @@ return require("packer").startup(function()
     "nvim-treesitter/nvim-treesitter",      -- https://github.com/nvim-treesitter/nvim-treesitter
     run = ":TSUpdate"
   }
-  use "nvim-treesitter/nvim-treesitter-textobjects" -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  -- use "nvim-treesitter/nvim-treesitter-textobjects" -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   use "rhysd/vim-clang-format"              -- https://github.com/rhysd/vim-clang-format
   use "fatih/vim-go"                        -- https://github.com/fatih/vim-go
   use "hrsh7th/cmp-nvim-lsp"                -- https://github.com/hrsh7th/cmp-nvim-lsp
   use "hrsh7th/nvim-cmp"                    -- https://github.com/hrsh7th/nvim-cmp
   use "neovim/nvim-lspconfig"               -- https://github.com/neovim/nvim-lspconfig
   use "onsails/lspkind-nvim"                -- https://github.com/onsails/lspkind-nvim
-  use "williamboman/nvim-lsp-installer"     -- https://github.com/williamboman/nvim-lsp-installer
+  -- use "williamboman/nvim-lsp-installer"     -- https://github.com/williamboman/nvim-lsp-installer
   use "numToStr/Comment.nvim"               -- https://github.com/numToStr/Comment.nvim
-  use { "kylechui/nvim-surround", tag = "*" }  -- https://github.com/kylechui/nvim-surround
+  -- use { "kylechui/nvim-surround", tag = "*" }  -- https://github.com/kylechui/nvim-surround
   use "windwp/nvim-autopairs"
   use {"L3MON4D3/LuaSnip", requires = {"rafamadriz/friendly-snippets"}}
   use { 'saadparwaiz1/cmp_luasnip' }

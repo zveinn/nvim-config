@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["csv.vim"] = {
-    loaded = true,
-    path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/csv.vim",
-    url = "https://github.com/chrisbra/csv.vim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -134,20 +129,10 @@ _G.packer_plugins = {
     path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-surround"] = {
-    loaded = true,
-    path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-surround",
-    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -158,11 +143,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-treesitter-textobjects"] = {
-    loaded = true,
-    path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -178,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["splitjoin.vim"] = {
-    loaded = true,
-    path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/splitjoin.vim",
-    url = "https://github.com/AndrewRadev/splitjoin.vim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

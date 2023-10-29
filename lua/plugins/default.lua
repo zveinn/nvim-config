@@ -37,3 +37,5 @@ vim.opt.hlsearch = false
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
+
+vim.g.go_fmt_autosave = 0
