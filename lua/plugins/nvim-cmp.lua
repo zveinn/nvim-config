@@ -10,8 +10,13 @@ if not lspconfig_setup then return end
 local cmp_nvim_lsp_setup, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_setup then return end
 
+local mason_setup, mason = pcall(require, "mason")
+if not mason_setup then return end
+mason.setup({})
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
@@ -108,21 +113,21 @@ luasnip.add_snippets("go", {
 -- local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+	-- Enable completion triggered by <c-x><c-o>
+	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', 'rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+	-- Mappings.
+	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+	vim.keymap.set('n', 'rn', vim.lsp.buf.rename, bufopts)
+	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
 local on_attach2 = function(_, bufnr)
@@ -166,28 +171,27 @@ local on_attach2 = function(_, bufnr)
 			vim.lsp.buf.format()
 		end,
 	})
-
 end
 
 local lspconfig = require 'lspconfig'
 local configs = require 'lspconfig/configs'
 
 if not configs.golangcilsp then
- 	configs.golangcilsp = {
+	configs.golangcilsp = {
 		default_config = {
-			cmd = {'golangci-lint-langserver'},
+			cmd = { 'golangci-lint-langserver' },
 			root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
 			init_options = {
-					-- command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json", "--issues-exit-code=1" };
-        command = { 'golangci-lint', 'run', '--out-format', 'json' },
+				-- command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json", "--issues-exit-code=1" };
+				command = { 'golangci-lint', 'run', '--out-format', 'json' },
 			}
-		};
+		},
 	}
 end
 lspconfig.golangci_lint_ls.setup {
-	filetypes = {'go','gomod'},
-  capabilities = capabilities,
-  on_attach = on_attach2,
+	filetypes = { 'go', 'gomod' },
+	capabilities = capabilities,
+	on_attach = on_attach2,
 }
 
 -- lspconfig['golangci_lint_ls'].setup {
@@ -200,57 +204,137 @@ lspconfig.golangci_lint_ls.setup {
 -- }
 -- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
 lspconfig['gopls'].setup {
-  capabilities = capabilities,
-  on_attach = on_attach2,
-  settings = {
-    gopls = {
-      gofumpt = true,
-      analyses = {
-        assign = true,
-        atomic = true,
-        bools = true,
-        composites = true,
-        copylocks = true,
-        deepequalerrors = true,
-        embed = true,
-        errorsas = true,
-        fieldalignment = false, -- lets you know about struct sizes
-        httpresponse = true,
-        ifaceassert = true,
-        loopclosure = true,
-        lostcancel = true,
-        nilfunc = true,
-        nilness = true,
-        nonewvars = true,
-        printf = true,
-        shadow = false, -- lets you know about duplicate err declerations
-        shift = true,
-        simplifycompositelit = true,
-        simplifyrange = true,
-        simplifyslice = true,
-        sortslice = true,
-        stdmethods = true,
-        stringintconv = true,
-        structtag = true,
-        testinggoroutine = true,
-        tests = true,
-        timeformat = true,
-        unmarshal = true,
-        unreachable = true,
-        unsafeptr = true,
-        unusedparams = true,
-        unusedresult = true,
-        unusedvariable = true,
-        unusedwrite = true,
-        useany = true,
-      },
-      hoverKind = "FullDocumentation",
-      linkTarget = "pkg.go.dev",
-      usePlaceholders = true,
-      vulncheck = "Imports",
-    },
-  },
+	capabilities = capabilities,
+	on_attach = on_attach2,
+	settings = {
+		gopls = {
+			gofumpt = true,
+			analyses = {
+				assign = true,
+				atomic = true,
+				bools = true,
+				composites = true,
+				copylocks = true,
+				deepequalerrors = true,
+				embed = true,
+				errorsas = true,
+				fieldalignment = false, -- lets you know about struct sizes
+				httpresponse = true,
+				ifaceassert = true,
+				loopclosure = true,
+				lostcancel = true,
+				nilfunc = true,
+				nilness = true,
+				nonewvars = true,
+				printf = true,
+				shadow = false, -- lets you know about duplicate err declerations
+				shift = true,
+				simplifycompositelit = true,
+				simplifyrange = true,
+				simplifyslice = true,
+				sortslice = true,
+				stdmethods = true,
+				stringintconv = true,
+				structtag = true,
+				testinggoroutine = true,
+				tests = true,
+				timeformat = true,
+				unmarshal = true,
+				unreachable = true,
+				unsafeptr = true,
+				unusedparams = true,
+				unusedresult = true,
+				unusedvariable = true,
+				unusedwrite = true,
+				useany = true,
+			},
+			hoverKind = "FullDocumentation",
+			linkTarget = "pkg.go.dev",
+			usePlaceholders = true,
+			vulncheck = "Imports",
+		},
+	},
 }
 
--- lspconfig['pyright'].setup{}
+lspconfig.efm.setup {
+	capabilities = capabilities,
+	on_attach = on_attach2,
+	init_options = { documentFormatting = true },
+	settings = {
+		languages = {
+			css = {
+				{ formatCommand = 'prettier "${INPUT}"', formatStdin = true, }
+			},
+			scss = {
+				{ formatCommand = 'prettier "${INPUT}"', formatStdin = true, }
+			}
+		}
+	}
+}
 
+lspconfig.eslint.setup {
+	capabilities = capabilities,
+	on_attach = on_attach2,
+	-- root_dir = require 'lspconfig/util'.root_pattern('package.json', '.eslintrc', '.git'),
+	root_dir = require 'lspconfig/util'.root_pattern(
+		'.eslintrc',
+		'.eslintrc.js',
+		'.eslintrc.cjs',
+		'.eslintrc.yaml',
+		'.eslintrc.yml',
+		'.eslintrc.json',
+		'package.json',
+		'.git'
+	),
+
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
+}
+
+lspconfig.tsserver.setup({
+	capabilities = capabilities,
+	on_attach = on_attach2,
+})
+
+
+lspconfig.jsonls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach2,
+})
+
+lspconfig.cssls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach2,
+	settings = {
+		css = {
+			validate = true
+		},
+		less = {
+			validate = true
+		},
+		scss = {
+			validate = true
+		}
+	}
+})
+
+lspconfig.html.setup({
+	capabilities = capabilities,
+	on_attach = on_attach2,
+	settings = { filetypes = { 'html', 'twig', 'hbs' } },
+})
+
+lspconfig.lua_ls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach2,
+	settings = {
+		Lua = {
+			workspace = { checkThirdParty = false },
+			telemetry = { enable = false },
+		},
+	}
+})
