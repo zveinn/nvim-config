@@ -274,7 +274,7 @@ lspconfig.efm.setup {
 
 lspconfig.eslint.setup {
 	capabilities = capabilities,
-	on_attach = on_attach2,
+	-- on_attach = on_attach2,
 	-- root_dir = require 'lspconfig/util'.root_pattern('package.json', '.eslintrc', '.git'),
 	root_dir = require 'lspconfig/util'.root_pattern(
 		'.eslintrc',

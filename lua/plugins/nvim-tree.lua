@@ -31,7 +31,7 @@ local function my_on_attach(bufnr)
 end
 
 local HEIGHT_RATIO = 1  -- You can change this
-local WIDTH_RATIO = 0.1 -- You can change this too
+local WIDTH_RATIO = 0.2 -- You can change this too
 
 nvimtree.setup({
 	on_attach = my_on_attach,

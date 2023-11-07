@@ -6,44 +6,44 @@ vim.opt.termguicolors = true
 catppuccin.setup {
 	flavour = "macchiato",
 	term_colors = true,
-  background = { -- :h background
-        light = "macchiato",
-        dark = "macchiato",
-  },
+	background = { -- :h background
+		light = "macchiato",
+		dark = "macchiato",
+	},
 	transparent_background = false,
 	no_italic = false,
 	no_bold = false,
 	styles = {
 		comments = { "italic" },
-		conditionals = { "bold"},
-		loops = { },
+		conditionals = { "bold" },
+		loops = {},
 		functions = { "bold" },
 		keywords = {},
-		strings = {"bold"},
+		strings = { "bold" },
 		variables = {},
 		numbers = {},
 		booleans = {},
 		properties = {},
 		types = { "bold" },
-	}, 
-  color_overrides = {
-        all = {
-          base = "#141414",
-          crust = "#1c1c1c"
-        },
-  },
-  -- integrations = {
-  --       cmp = true,
-  --       gitsigns = true,
-  --       nvimtree = true,
-  --       treesitter = true,
-  --       notify = false,
-  --       mini = {
-  --           enabled = true,
-  --           indentscope_color = "",
-  --       },
-  --       -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-  --   },
+	},
+	color_overrides = {
+		all = {
+			base = "#141414",
+			-- crust = "#0F0F0F"
+		},
+	},
+	-- integrations = {
+	--       cmp = true,
+	--       gitsigns = true,
+	--       nvimtree = true,
+	--       treesitter = true,
+	--       notify = false,
+	--       mini = {
+	--           enabled = true,
+	--           indentscope_color = "",
+	--       },
+	--       -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	--   },
 	highlight_overrides = {
 		macchiato = function(C)
 			return {
@@ -52,8 +52,8 @@ catppuccin.setup {
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
 				TelescopeBorder = { link = "FloatBorder" },
-        GitSignsChangeLn = { bg = C.crust},
-        GitSignsAddLn = { bg = C.crust},
+				GitSignsChangeLn = { bg = C.base },
+				GitSignsAddLn = { bg = C.base },
 			}
 		end,
 	},
