@@ -90,7 +90,7 @@ profiles:
             locator: native
             text_shaping:
                 engine: native
-            builtin_box_drawing: tru
+            builtin_box_drawing: true
             render_mode: gray
             strict_spacing: true
             regular:
@@ -150,7 +150,7 @@ color_schemes:
         # Default colors
         default:
             # Default background color (this can be made transparent, see above).
-            background: '#1a1716'
+            background: '#000000'
             # Default foreground text color.
             foreground: '#d0d0d0'
 
@@ -328,8 +328,9 @@ color_schemes:
     catppuccin_macchiato:
         # Default colours
         default:
-            background: "#24273A" # base
-            foreground: "#CAD3F5" # text
+            # background: "#24273A" # base
+            background: "#000000" # base
+            foreground: "#ffffff" # text
 
         # Cursor colour
         cursor:
