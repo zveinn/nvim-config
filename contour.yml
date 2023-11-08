@@ -27,6 +27,9 @@ profiles:
         shell: "/bin/bash"
         #shell: "/usr/tmux"
         #arguments: ["-u", "-2", "new-session", "-A", "-s", "main"]
+        bell: 
+            sound: "off" 
+            alert: false
 
         escape_sandbox: true
         copy_last_mark_range_offset: 0
@@ -39,8 +42,8 @@ profiles:
 
         # Determines the initial terminal size in characters.
         terminal_size:
-            columns: 80
-            lines: 25
+            columns: 120
+            lines: 50
 
         history:
             # Number of lines to preserve (-1 for infinite).
@@ -85,7 +88,7 @@ profiles:
 
         # Font related configuration (font face, styles, size, rendering mode).
         font:
-            size: 14
+            size: 12
             dpi_scale: 1.0
             locator: native
             text_shaping:
@@ -150,7 +153,7 @@ color_schemes:
         # Default colors
         default:
             # Default background color (this can be made transparent, see above).
-            background: '#000000'
+            background: '#141414'
             # Default foreground text color.
             foreground: '#d0d0d0'
 
@@ -329,8 +332,8 @@ color_schemes:
         # Default colours
         default:
             # background: "#24273A" # base
-            background: "#000000" # base
-            foreground: "#ffffff" # text
+            background: "#141414" # base
+            # foreground: "#ffffff" # text
 
         # Cursor colour
         cursor:
