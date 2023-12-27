@@ -148,8 +148,8 @@ local on_attach2 = function(_, bufnr)
 	nmap('<A-p>', ':vsp<cr> :lua vim.lsp.buf.definition()<CR><CR>zz', '[G]oto [D]efinition')
 	--nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 
-	-- nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-	-- nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+	-- nmap('<A-[>', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+	-- nmap('<A-]>', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
 	-- See `:help K` for why this keymap
 	-- nmap('<A-e>', vim.lsp.buf.type_definition, 'Type [D]efinition') -- SAME AS ALT+P

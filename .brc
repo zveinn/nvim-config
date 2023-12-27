@@ -36,3 +36,5 @@ syncRepo() {
 	gh repo sync "$1" -b "master"
 	echo "do not forget to git pull"
 }
+
+alias goland="/home/keyb1nd/.local/share/JetBrains/Toolbox/scripts/goland $1"

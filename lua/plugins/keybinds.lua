@@ -41,10 +41,14 @@ vim.keymap.set('n', '<C-s>', vim.diagnostic.open_float)
 --vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 -- vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 -- vim.keymap.set('n', '<A-S-y>', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+--
 vim.keymap.set('n', '<A-S-u>', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<A-S-i>', require('telescope.builtin').lsp_dynamic_workspace_symbols,
 	{ desc = '[W]orkspace [S]ymbols' })
 vim.keymap.set('n', '<A-S-o>', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<A-]>', require('telescope.builtin').lsp_references, { desc = '' })
+vim.keymap.set('n', '<A-[>', require('telescope.builtin').lsp_implementations, { desc = '' })
+
 --vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
 vim.keymap.set('n', '<A-S-p>', function()
 	-- You can pass additional configuration to telescope to change theme, layout, etc.
