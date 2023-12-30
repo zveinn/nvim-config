@@ -30,6 +30,11 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
+	preselect = cmp.PreselectMode.None,
+	complete = {
+		completeopt = "menu, menuone, noinsert, noselect"
+	},
+
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
@@ -76,14 +81,14 @@ cmp.setup {
 		end, { 'i', 's' }),
 	},
 	sources = {
-		{ name = "copilot", },
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' },
+		{ name = "copilot",  priority = 100 },
+		{ name = 'nvim_lsp', priority = 80 },
+		{ name = 'luasnip',  priority = 70 },
 	},
 	formatting = {
 		format = lspkind.cmp_format({
 			mode = "symbol",
-			max_width = 50,
+			max_width = 100,
 			symbol_map = { Copilot = "" }
 		})
 	},

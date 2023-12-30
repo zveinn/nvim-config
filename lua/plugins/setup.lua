@@ -49,18 +49,18 @@ return require("packer").startup(function()
 		config = function()
 			require('copilot').setup({
 				panel = {
-					enabled = false,
+					enabled = true,
 					auto_refresh = true,
 					keymap = {
 						jump_prev = "[[",
 						jump_next = "]]",
 						accept = "<CR>",
 						refresh = "gr",
-						open = "<M-CR>"
+						open = "<C-t>"
 					},
 					layout = {
 						position = "bottom", -- | top | left | right
-						ratio = 0.4
+						ratio = 0.9
 					},
 				},
 				suggestion = {
@@ -78,7 +78,7 @@ return require("packer").startup(function()
 				},
 				filetypes = {
 					yaml = false,
-					markdown = false,
+					markdown = true,
 					help = false,
 					gitcommit = false,
 					gitrebase = false,
