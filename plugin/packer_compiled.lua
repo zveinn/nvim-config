@@ -112,7 +112,7 @@ _G.packer_plugins = {
   ["copilot.lua"] = {
     after = { "copilot-cmp" },
     commands = { "Copilot" },
-    config = { "\27LJ\2\n„\4\0\0\5\0\16\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\0025\3\n\0005\4\v\0=\4\5\3=\3\f\0025\3\r\0=\3\14\0024\3\0\0=\3\15\2B\0\2\1K\0\1\0\26server_opts_overrides\14filetypes\1\0\t\tyaml\1\6.\1\bcvs\1\bsvn\1\rhgcommit\1\14gitrebase\1\14gitcommit\1\thelp\1\rmarkdown\1\15suggestion\1\0\6\16accept_word\1\fdismiss\n<C-]>\vaccept\n<M-l>\tnext\n<M-]>\tprev\n<M-[>\16accept_line\1\1\0\3\rdebounce\3K\fenabled\1\17auto_trigger\1\npanel\1\0\1\25copilot_node_command\tnode\vlayout\1\0\2\nratio\4š³æÌ\t™³æþ\3\rposition\vbottom\vkeymap\1\0\5\14jump_prev\a[[\frefresh\agr\topen\v<M-CR>\vaccept\t<CR>\14jump_next\a]]\1\0\2\17auto_refresh\1\fenabled\1\nsetup\fcopilot\frequire\0" },
+    config = { "\27LJ\2\n‡\4\0\0\5\0\16\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\0025\3\n\0005\4\v\0=\4\5\3=\3\f\0025\3\r\0=\3\14\0024\3\0\0=\3\15\2B\0\2\1K\0\1\0\26server_opts_overrides\14filetypes\1\0\n\ago\2\bcvs\1\bsvn\1\rhgcommit\1\14gitrebase\1\14gitcommit\1\thelp\1\rmarkdown\2\tyaml\1\6.\1\15suggestion\1\0\6\16accept_word\1\tprev\n<M-[>\vaccept\n<M-l>\fdismiss\n<C-]>\tnext\n<M-]>\16accept_line\1\1\0\3\rdebounce\0032\fenabled\1\17auto_trigger\2\npanel\1\0\1\25copilot_node_command\tnode\vlayout\1\0\2\nratio\4Í™³æ\fÌ™³ÿ\3\rposition\vbottom\vkeymap\1\0\5\14jump_prev\a[[\topen\n<C-t>\vaccept\t<CR>\frefresh\agr\14jump_next\a]]\1\0\2\17auto_refresh\2\fenabled\2\nsetup\fcopilot\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -158,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-spectre"] = {
+    loaded = true,
+    path = "/home/keyb1nd/.local/share/nvim/site/pack/packer/start/nvim-spectre",
+    url = "https://github.com/nvim-pack/nvim-spectre"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

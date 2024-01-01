@@ -54,19 +54,19 @@ return require("packer").startup(function()
 					keymap = {
 						jump_prev = "[[",
 						jump_next = "]]",
-						accept = "<CR>",
+						accept = "<Tab>",
 						refresh = "gr",
 						open = "<C-t>"
 					},
 					layout = {
 						position = "bottom", -- | top | left | right
-						ratio = 0.9
+						ratio = 0.7
 					},
 				},
 				suggestion = {
 					enabled = false,
 					auto_trigger = true,
-					debounce = 50,
+					debounce = 70,
 					keymap = {
 						accept = "<M-l>",
 						accept_word = false,

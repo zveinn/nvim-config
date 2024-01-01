@@ -1,2 +1,0 @@
---local copilot_setup, copilot = pcall(require, "copilot")
--- if not copilot_setup then return end
