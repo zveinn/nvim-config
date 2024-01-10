@@ -49,7 +49,7 @@ cmp.setup {
 		-- ['<C-f>'] = cmp.mapping.scroll_docs(4),
 		-- ['<C-Space>'] = cmp.mapping.complete {},
 		--
-		['<Tab>'] = cmp.mapping.confirm {
+		['<CR>'] = cmp.mapping.confirm {
 			-- behavior = cmp.ConfirmBehavior.Replace,
 			behavior = cmp.ConfirmBehavior.Select,
 			select = true,
@@ -171,7 +171,7 @@ local on_attach2 = function(_, bufnr)
 		vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 	end
 
-	-- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+	nmap('<A-x>', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
 	nmap('<C-r>', vim.lsp.buf.rename, '[R]e[n]ame')
 
