@@ -38,3 +38,4 @@ syncRepo() {
 }
 
 alias goland="/home/keyb1nd/.local/share/JetBrains/Toolbox/scripts/goland $1"
+alias l="lazygit"
