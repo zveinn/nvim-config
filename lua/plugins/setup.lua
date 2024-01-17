@@ -66,7 +66,7 @@ return require("packer").startup(function()
 				suggestion = {
 					enabled = false,
 					auto_trigger = true,
-					debounce = 200,
+					debounce = 500,
 					keymap = {
 						accept = "<M-l>",
 						accept_word = false,
