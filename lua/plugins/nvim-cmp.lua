@@ -83,14 +83,14 @@ cmp.setup {
 		end, { 'i', 's' }),
 	},
 	sources = {
-		{ name = "copilot",  priority = 100 },
 		{ name = 'nvim_lsp', priority = 80 },
 		{ name = 'luasnip',  priority = 70 },
+		{ name = "copilot",  priority = 60 },
 	},
 	formatting = {
 		format = lspkind.cmp_format({
 			mode = "symbol",
-			max_width = 100,
+			max_width = 200,
 			symbol_map = { Copilot = "" }
 		})
 	},

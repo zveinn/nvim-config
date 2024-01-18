@@ -5,7 +5,7 @@ if not setup then return end
 gitsigns.setup {
 	signs                        = {
 		add          = { text = 'A', show_count = true },
-		change       = { text = 'M', show_count = true},
+		change       = { text = 'M', show_count = true },
 		delete       = { text = 'D', show_count = true },
 		topdelete    = { text = 'TD', show_count = true },
 		changedelete = { text = 'CD', show_count = true },
@@ -43,5 +43,3 @@ gitsigns.setup {
 		enable = false
 	},
 }
-
-

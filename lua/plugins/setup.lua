@@ -17,31 +17,8 @@ end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 return require("packer").startup(function()
-	use "wbthomason/packer.nvim" -- https://github.com/wbthomason/packer.nvim
+	use "wbthomason/packer.nvim"
 
-	-- Look and Feel
-	use { "catppuccin/nvim", as = "catppuccin" } -- https://github.com/catppuccin/nvim
-
-	-- Productivity
-	use "nvim-lualine/lualine.nvim" -- https://github.com/nvim-lualine/lualine.nvim
-	use {
-		"nvim-tree/nvim-tree.lua",    -- https://github.com/nvim-tree/nvim-tree.lua
-		requires = {
-			"nvim-tree/nvim-web-devicons", -- https://github.com/nvim-tree/nvim-web-devicons
-		},
-	}
-	use { "AndrewRadev/splitjoin.vim" }
-	use {
-		"nvim-telescope/telescope-fzf-native.nvim", -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
-		run = "make",
-	}
-	use {
-		"nvim-telescope/telescope.nvim", -- https://github.com/nvim-telescope/telescope.nvim
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
-		branch = "0.1.x",
-	}
 	use {
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
@@ -105,31 +82,40 @@ return require("packer").startup(function()
 		end
 	}
 
-	-- Filetypes
-	-- use "chrisbra/csv.vim" -- https://github.com/chrisbra/csv.vim
-
-	-- Development
-	use "lewis6991/gitsigns.nvim"      -- https://github.com/lewis6991/gitsigns.nvim
+	use { "catppuccin/nvim", as = "catppuccin" }
+	use "nvim-lualine/lualine.nvim"
 	use {
-		"nvim-treesitter/nvim-treesitter", -- https://github.com/nvim-treesitter/nvim-treesitter
-		run = ":TSUpdate"
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
 	}
-	-- use "nvim-treesitter/nvim-treesitter-textobjects" -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-	use "rhysd/vim-clang-format" -- https://github.com/rhysd/vim-clang-format
-	use "fatih/vim-go"          -- https://github.com/fatih/vim-go
-	use "hrsh7th/cmp-nvim-lsp"  -- https://github.com/hrsh7th/cmp-nvim-lsp
-	use "hrsh7th/nvim-cmp"      -- https://github.com/hrsh7th/nvim-cmp
-	use "neovim/nvim-lspconfig" -- https://github.com/neovim/nvim-lspconfig
-	use "onsails/lspkind-nvim"  -- https://github.com/onsails/lspkind-nvim
-	use "onsails/lspkind-nvim"  -- https://github.com/onsails/lspkind-nvim
-	-- use "williamboman/nvim-lsp-installer"     -- https://github.com/williamboman/nvim-lsp-installer
-	use "numToStr/Comment.nvim" -- https://github.com/numToStr/Comment.nvim
-	-- use { "kylechui/nvim-surround", tag = "*" }  -- https://github.com/kylechui/nvim-surround
-	use "windwp/nvim-autopairs"
-	use { "L3MON4D3/LuaSnip", requires = { "rafamadriz/friendly-snippets" } }
-	use { 'saadparwaiz1/cmp_luasnip' }
+	use {
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "make",
+	}
+	use {
+		"nvim-telescope/telescope.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		branch = "0.1.x",
+	}
 
+	use { "AndrewRadev/splitjoin.vim" }
+	use "lewis6991/gitsigns.nvim"
+	use "rhysd/vim-clang-format"
+	use "fatih/vim-go"
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/nvim-cmp"
+	use "neovim/nvim-lspconfig"
+	use "onsails/lspkind-nvim"
+	use "numToStr/Comment.nvim"
+	use "windwp/nvim-autopairs"
+	use { 'saadparwaiz1/cmp_luasnip' }
 	use { "williamboman/mason.nvim" }
+	use { "L3MON4D3/LuaSnip", requires = { "rafamadriz/friendly-snippets" } }
+	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
 	if packer_bootstrap then
 		require("packer").sync()

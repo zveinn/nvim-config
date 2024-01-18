@@ -49,6 +49,8 @@ vim.keymap.set('n', '<A-S-o>', require('telescope.builtin').find_files, { desc =
 vim.keymap.set('n', '<A-]>', require('telescope.builtin').lsp_references, { desc = '' })
 vim.keymap.set('n', '<A-[>', require('telescope.builtin').lsp_implementations, { desc = '' })
 
+-- vim.g.go_fmt_command = "golines"
+-- vim.g.go_fmt_options = { golines = "-m 100" }
 --vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
 vim.keymap.set('n', '<A-S-p>', function()
 	-- You can pass additional configuration to telescope to change theme, layout, etc.

@@ -32,7 +32,7 @@ local conditions = {
 -- Config
 local config = {
 	options = {
-    globalstatus = true,
+		globalstatus = true,
 		-- Disable sections and component separators
 		component_separators = '',
 		section_separators = '',
@@ -78,13 +78,13 @@ end
 
 ins_left {
 	'filename',
-  path = 2,
+	path = 2,
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = 'bold' },
 }
 
-ins_left { 
-  'location',
+ins_left {
+	'location',
 	padding = { left = 0, right = 0 }, -- We don't need space before this
 	color = { fg = colors.blue, gui = 'bold' },
 }
@@ -170,7 +170,3 @@ ins_left {
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
-
-
-
-
