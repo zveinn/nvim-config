@@ -90,7 +90,7 @@ cmp.setup {
 	formatting = {
 		format = lspkind.cmp_format({
 			mode = "symbol",
-			max_width = 200,
+			max_width = 150,
 			symbol_map = { Copilot = "" }
 		})
 	},
