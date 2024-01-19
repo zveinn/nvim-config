@@ -5,7 +5,7 @@ vim.opt.termguicolors = true
 
 catppuccin.setup {
 	flavour = "macchiato",
-	term_colors = true,
+	term_colors = false,
 	background = { -- :h background
 		light = "macchiato",
 		dark = "macchiato",
@@ -33,17 +33,17 @@ catppuccin.setup {
 		},
 	},
 	-- integrations = {
-	--       cmp = true,
-	--       gitsigns = true,
-	--       nvimtree = true,
-	--       treesitter = true,
-	--       notify = false,
-	--       mini = {
-	--           enabled = true,
-	--           indentscope_color = "",
-	--       },
-	--       -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-	--   },
+	-- 	cmp = true,
+	-- 	gitsigns = true,
+	-- 	nvimtree = true,
+	-- 	treesitter = true,
+	-- 	notify = false,
+	-- 	mini = {
+	-- 		enabled = true,
+	-- 		indentscope_color = "",
+	-- 	},
+	-- 	-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	-- },
 	highlight_overrides = {
 		macchiato = function(C)
 			return {
