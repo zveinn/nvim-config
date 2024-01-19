@@ -506,13 +506,13 @@ input_mapping:
     # - { mods: [Control, Shift], key: '_',           action: DecreaseFontSize }
     # - { mods: [Control, Shift], key: N,             action: NewTerminal }
     # - { mods: [Control, Shift], key: V,             action: PasteClipboard, strip: false }
-    - { mods: [Control],   key: V,             action: PasteClipboard, strip: true }
-    - { mods: [Control],   key: C,             action: CopySelection, mode: 'Select|Insert' }
+    # - { mods: [Control],   key: V,             action: PasteClipboard, strip: true }
+    # - { mods: [Control],   key: C,             action: CopySelection, mode: 'Select|Insert' }
     # - { mods: [Control],        key: C,             action: CancelSelection, mode: 'Select|Insert' }
     # - { mods: [Control],        key: V,             action: PasteClipboard, strip: false, mode: 'Select|Insert' }
     # - { mods: [Control],        key: V,             action: CancelSelection, mode: 'Select|Insert' }
     # - { mods: [],               key: Escape,        action: CancelSelection, mode: 'Select|Insert' }
-    # - { mods: [Control, Shift], key: Space,         action: ViNormalMode, mode: 'Insert' }
+    # - { mods: [Control], key: i,         action: ViNormalMode, mode: 'Insert' }
     # - { mods: [Control, Shift], key: Comma,         action: OpenConfiguration }
     # - { mods: [Control, Shift], key: Q,             action: Quit }
     # - { mods: [Control],        mouse: WheelDown,   action: DecreaseFontSize }
