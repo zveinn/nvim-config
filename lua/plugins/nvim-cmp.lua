@@ -83,9 +83,9 @@ cmp.setup {
 		end, { 'i', 's' }),
 	},
 	sources = {
-		{ name = 'nvim_lsp', priority = 80 },
+		{ name = "copilot",  priority = 100 },
+		{ name = 'nvim_lsp', priority = 90 },
 		{ name = 'luasnip',  priority = 70 },
-		{ name = "copilot",  priority = 60 },
 	},
 	formatting = {
 		format = lspkind.cmp_format({
