@@ -7,15 +7,15 @@ vim.keymap.set('n', '<C-o>', '<C-o>zz')
 vim.keymap.set('n', '<A-o>', ':w<cr> :q<cr>')
 -- vim.keymap.set('n', '<A-o>', ':w<cr> :bw<cr>')
 vim.keymap.set('n', '<A-C-q>', ':source $MYVIMRC<cr>')
-vim.keymap.set('n', '<A-.>', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<A-.>', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<A-z>', '')
 vim.keymap.set('n', '<C-z>', '')
 
-vim.keymap.set('n', '<S-l>', '<C-w>l')
-vim.keymap.set('n', '<S-h>', '<C-w>h')
+vim.keymap.set('n', '<S-L>', '<C-w>l')
 vim.keymap.set('n', '<S-H>', '<C-w>h')
-vim.keymap.set('n', '<S-j>', '<C-w>j')
-vim.keymap.set('n', '<S-k>', '<C-w>k')
+vim.keymap.set('n', '<S-J>', '<C-w>j')
+vim.api.nvim_set_keymap('n', 'K', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-K>', '<C-w>k')
 
 vim.keymap.set('n', '<A-j>', '<C-d>')
 vim.keymap.set('n', '<A-k>', '<C-u>')
@@ -23,6 +23,7 @@ vim.keymap.set('n', '<A-k>', '<C-u>')
 vim.keymap.set('n', '<A-1>', ':SplitjoinJoin<cr>')
 vim.keymap.set('n', '<A-2>', ':SplitjoinSplit<cr>')
 vim.keymap.set('n', 'U', '<C-r>')
+vim.keymap.set('n', '<A-;>', ':split<cr> <C-w>j')
 
 
 -- vim.keymap.set({ 'n', 'i' }, '<A-s>', '<esc> :w<cr> :!goimports -w % <cr><cr>') -- Source config

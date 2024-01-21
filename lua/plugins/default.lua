@@ -39,3 +39,4 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 vim.g.go_fmt_autosave = 0
+vim.g.go_doc_keywordprg_enabled = 0
