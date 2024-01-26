@@ -101,7 +101,7 @@ return require("packer").startup(function()
 		},
 		branch = "0.1.x",
 	}
-
+	use { "lukas-reineke/indent-blankline.nvim" }
 	use { "AndrewRadev/splitjoin.vim" }
 	use "lewis6991/gitsigns.nvim"
 	use "rhysd/vim-clang-format"
@@ -116,6 +116,7 @@ return require("packer").startup(function()
 	use { "williamboman/mason.nvim" }
 	use { "L3MON4D3/LuaSnip", requires = { "rafamadriz/friendly-snippets" } }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+	use { "nvim-treesitter/nvim-treesitter-context" }
 
 	if packer_bootstrap then
 		require("packer").sync()
