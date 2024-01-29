@@ -31,7 +31,7 @@ return require("packer").startup(function()
 					keymap = {
 						jump_prev = "[[",
 						jump_next = "]]",
-						accept = "<CR>",
+						accept = "<C-N>",
 						refresh = "gr",
 						open = "<C-t>"
 					},

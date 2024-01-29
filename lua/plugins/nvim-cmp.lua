@@ -18,6 +18,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
+local viewPos = vim.fn.winsaveview()
+
 local has_words_before = function()
 	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -200,7 +202,15 @@ local on_attach2 = function(_, bufnr)
 		pattern = '*.*',
 		group = 'AutoFormatting',
 		callback = function()
+			-- viewPos = vim.fn.winsaveview()
 			vim.lsp.buf.format()
+		end,
+	})
+	vim.api.nvim_create_autocmd('BufWritePost', {
+		pattern = '*.*',
+		group = 'AutoFormatting',
+		callback = function()
+			-- vim.fn.winrestview(viewPos)
 		end,
 	})
 end
@@ -213,7 +223,6 @@ configs.golangcilsp = {
 		cmd = { 'golangci-lint-langserver' },
 		root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
 		init_options = {
-			-- command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json", "--issues-exit-code=1" };
 			command = { 'golangci-lint', 'run', '--out-format', 'json', '--allow-parallel-runners' },
 		}
 	},
@@ -289,6 +298,7 @@ lspconfig['gopls'].setup {
 
 lspconfig.efm.setup {
 	capabilities = capabilities,
+	filetypes = { 'css', 'scss', 'js', 'jsx' },
 	on_attach = on_attach2,
 	init_options = { documentFormatting = true },
 	settings = {
