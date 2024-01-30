@@ -18,7 +18,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
-local viewPos = vim.fn.winsaveview()
 
 local has_words_before = function()
 	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
@@ -198,19 +197,11 @@ local on_attach2 = function(_, bufnr)
 	--	end, '[W]orkspace [L]ist Folders')
 
 	vim.api.nvim_create_augroup('AutoFormatting', {})
-	vim.api.nvim_create_autocmd('BufWritePre', {
-		pattern = '*.*',
-		group = 'AutoFormatting',
-		callback = function()
-			-- viewPos = vim.fn.winsaveview()
-			vim.lsp.buf.format()
-		end,
-	})
 	vim.api.nvim_create_autocmd('BufWritePost', {
 		pattern = '*.*',
 		group = 'AutoFormatting',
 		callback = function()
-			-- vim.fn.winrestview(viewPos)
+			vim.lsp.buf.format()
 		end,
 	})
 end
@@ -234,14 +225,6 @@ lspconfig.golangci_lint_ls.setup {
 	on_attach = on_attach2,
 }
 
--- lspconfig['golangci_lint_ls'].setup {
---   capabilities = capabilities,
---   on_attach = on_attach2,
---   settings = {
---     filetypes = {"go","gomod"}
---   }
---
--- }
 -- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
 lspconfig['gopls'].setup {
 	capabilities = capabilities,
@@ -296,22 +279,23 @@ lspconfig['gopls'].setup {
 	},
 }
 
-lspconfig.efm.setup {
-	capabilities = capabilities,
-	filetypes = { 'css', 'scss', 'js', 'jsx' },
-	on_attach = on_attach2,
-	init_options = { documentFormatting = true },
-	settings = {
-		languages = {
-			css = {
-				{ formatCommand = 'prettier "${INPUT}"', formatStdin = true, }
-			},
-			scss = {
-				{ formatCommand = 'prettier "${INPUT}"', formatStdin = true, }
-			}
-		}
-	}
-}
+-- lspconfig.efm.setup {
+-- 	capabilities = capabilities,
+-- 	filetypes = { 'css', 'scss' },
+-- 	filetypes = {},
+-- 	on_attach = on_attach2,
+-- 	init_options = { documentFormatting = true },
+-- 	settings = {
+-- 		languages = {
+-- 			css = {
+-- 				{ formatCommand = 'prettier "${INPUT}"', formatStdin = true, }
+-- 			},
+-- 			scss = {
+-- 				{ formatCommand = 'prettier "${INPUT}"', formatStdin = true, }
+-- 			}
+-- 		}
+-- 	}
+-- }
 
 lspconfig.eslint.setup {
 	capabilities = capabilities,

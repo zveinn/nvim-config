@@ -40,7 +40,7 @@ vim.opt.termguicolors = true
 
 vim.g.go_fmt_autosave = 0
 vim.g.go_doc_keywordprg_enabled = 0
-vim.g.syntastic_auto_jump = 0
+-- vim.g.syntastic_auto_jump = 0
 
 vim.cmd.fileformat = "unix"
-vim.cmd.autocmd = "BufNewFile * set fileformat=unix"
+-- vim.cmd.autocmd = "BufNewFile * set fileformat=unix"
