@@ -10,3 +10,7 @@ also
 :GoInstallBinaries
 
 NOTE: nvim won't work inside bash shell. Use powershell.
+
+CONFIG LOCATION:
+C:/Users/[username]/AppData/Local/nvim
+-- put CONTENTS of windows(this dir) inside the above folder.
