@@ -1,5 +1,7 @@
 https://github.com/nvim-telescope/telescope-fzf-native.nvim/issues/43#issuecomment-1020653830
 
+PLUGIN LOCATION: C:\Users\[USERNAME]\AppData\Local\nvim-data\site\pack\packer\start
+
 -- the above shows how to install fzf
 choco install minwg
 choco install make
