@@ -16,6 +16,8 @@ vim.keymap.set('n', '<S-H>', '<C-w>h')
 vim.keymap.set('n', '<S-J>', '<C-w>j')
 vim.keymap.set('n', '<S-K>', '<C-w>k')
 
+vim.keymap.set('n', '<S-f>', '<C-v>')
+
 vim.keymap.set('n', '<A-j>', '<C-d>')
 vim.keymap.set('n', '<A-k>', '<C-u>')
 vim.keymap.set('n', '<C-m>', ':Copilot panel<cr>')
