@@ -4,6 +4,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/keyb1nd/go/bin
 
 
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -12,7 +13,8 @@ shopt -s expand_aliases
 alias ..="cd .."
 alias ...="cd ..;cd .."
 alias ....="cd ..;cd ..;cd .."
-alias ls="ls -lahF --color=auto"
+alias ls="ls -laF --color=auto"
+alias lsh="ls -lahF --color=auto"
 alias tn="tmux new -s $1"
 alias td="tmux detach"
 alias ta="tmux attach -d -t $1"
@@ -39,3 +41,31 @@ syncRepo() {
 
 alias goland="/home/keyb1nd/.local/share/JetBrains/Toolbox/scripts/goland $1"
 alias l="lazygit"
+
+alias k="kubectl"
+alias kg="kubectl get"
+alias ks="kubectl get pod,svc -n kube-system"
+ka(){
+	echo "KIND NETWORK"
+	docker network inspect -f '{{.IPAM.Config}}' kind
+	echo "NODES"
+	echo "=============================================================="
+	echo ""
+	kubectl get nodes
+	echo "=============================================================="
+	echo ""
+	echo "PODS/SERVICES >>> NAMESPACE: kube-system"
+	echo "=============================================================="
+	kubectl get pod,svc -n kube-system
+	echo "=============================================================="
+	echo ""
+	echo "PODS/SERVICES >>> NAMESPACE: default"
+	echo "=============================================================="
+	kubectl get pod,svc -n default
+	echo "=============================================================="
+	echo ""
+	echo "PODS/SERVICES >>> NAMESPACE: minio-operator"
+	echo "=============================================================="
+	kubectl get pod,svc -n minio-operator
+	echo "=============================================================="
+}

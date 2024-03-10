@@ -9,7 +9,7 @@ word_delimiters: " /\\()\"'-.,:;<>~!@#$%^&*+=[]{}~?|│"
 read_buffer_size: 16384
 pty_buffer_size: 1048576
 default_profile: main
-spawn_new_process: false
+spawn_new_process: true
 reflow_on_resize: true
 bypass_mouse_protocol_modifier: Shift
 mouse_block_selection_modifier: Control
@@ -17,14 +17,14 @@ on_mouse_select: CopyToSelectionClipboard
 live_config: true
 
 images:
-    sixel_scrolling: true
+    sixel_scrolling: false
     sixel_register_count: 4096
     max_width: 0
     max_height: 0
 
 profiles:
     main:
-        shell: "/bin/bash"
+        shell: "/usr/bin/bash"
         #shell: "/usr/tmux"
         #arguments: ["-u", "-2", "new-session", "-A", "-s", "main"]
         bell: 
@@ -34,25 +34,25 @@ profiles:
         escape_sandbox: true
         copy_last_mark_range_offset: 0
         initial_working_directory: "~"
-        show_title_bar: true
-        fullscreen: false
-        maximized: false
+        show_title_bar: false
+        fullscreen: true
+        maximized: true
         wm_class: "contour"
         terminal_id: VT525
 
         # Determines the initial terminal size in characters.
         terminal_size:
-            columns: 120
-            lines: 50
+            columns: 140
+            lines: 100
 
         history:
             # Number of lines to preserve (-1 for infinite).
-            limit: 10000
+            limit: 20000
             # Boolean indicating whether or not to scroll down to the bottom on screen updates.
             auto_scroll_on_update: true
             # Number of lines to scroll on ScrollUp & ScrollDown events.
             # Default: 3
-            scroll_multiplier: 3
+            scroll_multiplier: 0
 
         # visual scrollbar support
         scrollbar:
@@ -132,7 +132,7 @@ profiles:
                 blinking_interval: 500
 
         vi_mode_highlight_timeout: 300
-        vi_mode_scrolloff: 8
+        vi_mode_scrolloff: 1
 
         status_line:
             display: none
@@ -254,11 +254,11 @@ input_mapping:
     # - { mods: [Alt],            mouse: WheelUp,     action: IncreaseOpacity }
     # - { mods: [Control, Alt],   key: S,             action: ScreenshotVT }
     - { mods: [Control], key: '=',          action: IncreaseFontSize }
-    - { mods: [Control],        key: '0',           action: ResetFontSize }
-    - { mods: [Control], key: '-',         action: DecreaseFontSize }
+    # - { mods: [Control], key: '0',           action: ResetFontSize }
+    - { mods: [Control], key: '0',         action: DecreaseFontSize }
     # - { mods: [Control, Shift], key: '_',           action: DecreaseFontSize }
     # - { mods: [Control, Shift], key: N,             action: NewTerminal }
-    - { mods: [Control, Shift], key: V,             action: PasteClipboard, strip: false }
+    - { mods: [Control], key: V,             action: PasteClipboard, strip: false }
     # - { mods: [Control],   key: V,             action: PasteClipboard, strip: true }
     # - { mods: [Control],   key: C,             action: CopySelection, mode: 'Select|Insert' }
     # - { mods: [Control],        key: C,             action: CancelSelection, mode: 'Select|Insert' }
@@ -268,8 +268,8 @@ input_mapping:
     # - { mods: [Control], key: i,         action: ViNormalMode, mode: 'Insert' }
     # - { mods: [Control, Shift], key: Comma,         action: OpenConfiguration }
     # - { mods: [Control, Shift], key: Q,             action: Quit }
-    # - { mods: [Control],        mouse: WheelDown,   action: DecreaseFontSize }
-    # - { mods: [Control],        mouse: WheelUp,     action: IncreaseFontSize }
+    # - { mods: [Control],        mouse: '-',   action: DecreaseFontSize }
+    # - { mods: [Control],        mouse: '=',     action: IncreaseFontSize }
     # - { mods: [Shift],          key: DownArrow,     action: ScrollOneDown }
     # - { mods: [Shift],          key: End,           action: ScrollToBottom }
     # - { mods: [Shift],          key: Home,          action: ScrollToTop }
