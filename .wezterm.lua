@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm';
 
 local config = {
+	default_prog = { 'bash' },
 	color_scheme = 'One Dark (Gogh)',
 	-- window_background_opacity = 0.90,
 	-- window_decorations = "NONE",
@@ -15,6 +16,10 @@ local config = {
 	},
 	audible_bell = "Disabled"
 };
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+	config.default_prog = { 'C:/Program Files/Git/bin/bash.exe -i -l' }
+end
 
 config.colors = { foreground = "#abb2bf", background = "#000000" }
 config.font = wezterm.font('FiraMono Nerd Font Medium', { weight = 'Medium', italic = false })
