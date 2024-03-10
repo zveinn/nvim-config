@@ -84,7 +84,7 @@ cmp.setup {
 		end, { 'i', 's' }),
 	},
 	sources = {
-		{ name = "copilot",  priority = 100 },
+		-- { name = "copilot",  priority = 100 },
 		{ name = 'nvim_lsp', priority = 90 },
 		{ name = 'luasnip',  priority = 70 },
 	},
@@ -92,7 +92,7 @@ cmp.setup {
 		format = lspkind.cmp_format({
 			mode = "symbol",
 			max_width = 150,
-			symbol_map = { Copilot = "" }
+			-- symbol_map = { Copilot = "" }
 		})
 	},
 }
@@ -296,7 +296,7 @@ lspconfig['gopls'].setup {
 -- 		}
 -- 	}
 -- }
-
+--
 lspconfig.eslint.setup {
 	capabilities = capabilities,
 	-- on_attach = on_attach2,
@@ -308,8 +308,7 @@ lspconfig.eslint.setup {
 		'.eslintrc.yaml',
 		'.eslintrc.yml',
 		'.eslintrc.json',
-		'package.json',
-		'.git'
+		'package.json'
 	),
 
 	on_attach = function(client, bufnr)
@@ -322,7 +321,7 @@ lspconfig.eslint.setup {
 
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
-	on_attach = on_attach2,
+	on_attach = on_attach,
 })
 
 

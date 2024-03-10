@@ -15,10 +15,11 @@ vim.keymap.set('n', '<S-L>', '<C-w>l')
 vim.keymap.set('n', '<S-H>', '<C-w>h')
 vim.keymap.set('n', '<S-J>', '<C-w>j')
 vim.keymap.set('n', '<S-K>', '<C-w>k')
+vim.keymap.set('n', '<S-f>', '<C-v>')
 
 vim.keymap.set('n', '<A-j>', '<C-d>')
 vim.keymap.set('n', '<A-k>', '<C-u>')
-vim.keymap.set('n', '<C-m>', ':Copilot panel<cr>')
+-- vim.keymap.set('n', '<C-m>', ':Copilot panel<cr>')
 
 vim.keymap.set('n', '<A-1>', ':SplitjoinJoin<cr>')
 vim.keymap.set('n', '<A-2>', ':SplitjoinSplit<cr>')
