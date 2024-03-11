@@ -11,7 +11,7 @@ catppuccin.setup {
 		dark = "macchiato",
 	},
 	transparent_background = false,
-	no_italic = false,
+	no_italic = true,
 	no_bold = false,
 	styles = {
 		comments = { "italic" },
@@ -28,7 +28,7 @@ catppuccin.setup {
 	},
 	color_overrides = {
 		all = {
-			base = "#141414",
+			base = "#080808",
 			-- crust = "#0F0F0F"
 		},
 	},
