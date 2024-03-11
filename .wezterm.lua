@@ -17,6 +17,14 @@ local config = {
 	audible_bell = "Disabled"
 };
 
+config.keys = {
+	{
+		key = 'v',
+		mods = 'CTRL',
+		action = wezterm.action({ PasteFrom = "Clipboard" }),
+	},
+}
+
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	config.default_prog = { 'C:/Program Files/Git/bin/bash.exe -i -l' }
 end
