@@ -9,7 +9,12 @@ catppuccin.setup {
 		light = "macchiato",
 		dark = "macchiato",
 	},
-	transparent_background = false,
+	-- dim_inactive = {
+	-- 	enabled = false,
+	-- 	shade = "dark",
+	-- 	percentage = 0.15,
+	-- },
+	transparent_background = true,
 	no_italic = true,
 	no_bold = false,
 	styles = {
@@ -31,18 +36,18 @@ catppuccin.setup {
 			-- crust = "#0F0F0F"
 		},
 	},
-	-- integrations = {
-	-- 	cmp = true,
-	-- 	gitsigns = true,
-	-- 	nvimtree = true,
-	-- 	treesitter = true,
-	-- 	notify = false,
-	-- 	mini = {
-	-- 		enabled = true,
-	-- 		indentscope_color = "",
-	-- 	},
-	-- 	-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-	-- },
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		treesitter = true,
+		notify = false,
+		-- mini = {
+		-- 	enabled = true,
+		-- 	indentscope_color = "",
+		-- },
+		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	},
 	highlight_overrides = {
 		macchiato = function(C)
 			return {
@@ -51,8 +56,13 @@ catppuccin.setup {
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
 				TelescopeBorder = { link = "FloatBorder" },
-				GitSignsChangeLn = { bg = C.base },
-				GitSignsAddLn = { bg = C.base },
+				GitSignsDeleteLn = { bg = C.none },
+				GitSignsChangeLn = { bg = C.none },
+				GitSignsChange = { bg = C.none },
+				GitSignsChangeNr = { bg = C.none },
+				GitSignsAddLn = { bg = C.none },
+				GitSignsAdd = { bg = C.none },
+				GitSignsAddNr = { bg = C.none },
 			}
 		end,
 	},

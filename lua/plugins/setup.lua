@@ -104,7 +104,7 @@ return require("packer").startup(function()
 	}
 	use { "lukas-reineke/indent-blankline.nvim" }
 	use { "AndrewRadev/splitjoin.vim" }
-	use "lewis6991/gitsigns.nvim"
+	-- use "lewis6991/gitsigns.nvim"
 	use "rhysd/vim-clang-format"
 	use "fatih/vim-go"
 	use "hrsh7th/cmp-nvim-lsp"

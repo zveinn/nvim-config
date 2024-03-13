@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/sveinn/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/home/sveinn/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/sveinn/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
