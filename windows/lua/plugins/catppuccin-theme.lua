@@ -1,7 +1,7 @@
 local present, catppuccin = pcall(require, "catppuccin")
 if not present then return end
 
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 catppuccin.setup {
 	flavour = "macchiato",
@@ -10,7 +10,13 @@ catppuccin.setup {
 		light = "macchiato",
 		dark = "macchiato",
 	},
-	transparent_background = false,
+	-- dim_inactive = {
+	-- 	enabled = true,  -- dims the background color of inactive window
+	-- 	shade = "dark",
+	-- 	percentage = 0.15, -- percentage of the shade to apply to the inactive window
+	-- },
+	transparent_background = true,
+
 	no_italic = true,
 	no_bold = false,
 	styles = {
@@ -32,18 +38,18 @@ catppuccin.setup {
 			-- crust = "#0F0F0F"
 		},
 	},
-	-- integrations = {
-	-- 	cmp = true,
-	-- 	gitsigns = true,
-	-- 	nvimtree = true,
-	-- 	treesitter = true,
-	-- 	notify = false,
-	-- 	mini = {
-	-- 		enabled = true,
-	-- 		indentscope_color = "",
-	-- 	},
-	-- 	-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-	-- },
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		treesitter = true,
+		notify = false,
+		-- mini = {
+		-- 	enabled = true,
+		-- 	indentscope_color = "",
+		-- },
+		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	},
 	highlight_overrides = {
 		macchiato = function(C)
 			return {
@@ -52,8 +58,6 @@ catppuccin.setup {
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
 				TelescopeBorder = { link = "FloatBorder" },
-				GitSignsChangeLn = { bg = C.base },
-				GitSignsAddLn = { bg = C.base },
 			}
 		end,
 	},
