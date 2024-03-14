@@ -10,11 +10,12 @@ catppuccin.setup {
 		dark = "macchiato",
 	},
 	-- dim_inactive = {
-	-- 	enabled = false,
+	-- 	enabled = true,  -- dims the background color of inactive window
 	-- 	shade = "dark",
-	-- 	percentage = 0.15,
+	-- 	percentage = 0.15, -- percentage of the shade to apply to the inactive window
 	-- },
 	transparent_background = true,
+
 	no_italic = true,
 	no_bold = false,
 	styles = {
@@ -56,13 +57,6 @@ catppuccin.setup {
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
 				TelescopeBorder = { link = "FloatBorder" },
-				GitSignsDeleteLn = { bg = C.none },
-				GitSignsChangeLn = { bg = C.none },
-				GitSignsChange = { bg = C.none },
-				GitSignsChangeNr = { bg = C.none },
-				GitSignsAddLn = { bg = C.none },
-				GitSignsAdd = { bg = C.none },
-				GitSignsAddNr = { bg = C.none },
 			}
 		end,
 	},

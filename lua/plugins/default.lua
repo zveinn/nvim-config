@@ -44,3 +44,6 @@ vim.g.go_doc_keywordprg_enabled = 0
 
 vim.cmd.fileformat = "unix"
 -- vim.cmd.autocmd = "BufNewFile * set fileformat=unix"
+vim.g.neovide_cursor_trail_legnth = 0
+vim.g.neovide_cursor_animation_length = 0
+vim.o.guifont = "Hurmit Nerd Font Mono"

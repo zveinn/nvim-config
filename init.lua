@@ -1,6 +1,5 @@
 require("plugins.setup")
 
-require("plugins.default")
 
 require("plugins.autopairs")
 require("plugins.lualine")
@@ -14,3 +13,4 @@ require("plugins.nvim-surround")
 require("plugins.keybinds")
 require("plugins.indent")
 require("plugins.context")
+require("plugins.default")
