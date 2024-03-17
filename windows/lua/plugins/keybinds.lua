@@ -2,12 +2,20 @@
 -- vim.keymap.set('n', '<C-d>', vim.diagnostic.goto_next)
 -- vim.keymap.set('n', '<C-s>', ':lua vim.diagnostic.goto_prev()<cr> zz')
 --vim.keymap.set('n', 'C-q', vim.diagnostic.setloclist)
+-- local setup, nvimtree = pcall(require, "nvim-tree-api")
+
+
+-- vim.keymap.set('n', '<A-.>', ':NvimTreeToggle<cr>')
+vim.keymap.set({ "n", "i" }, '<A-.>', vim.cmd.NvimTreeToggle)
+
+
 
 vim.keymap.set('n', '<C-o>', '<C-o>zz')
 vim.keymap.set('n', '<A-o>', ':w<cr> :q<cr>')
+
+
 -- vim.keymap.set('n', '<A-o>', ':w<cr> :bw<cr>')
 vim.keymap.set('n', '<A-C-q>', ':source $MYVIMRC<cr>')
-vim.keymap.set('n', '<A-.>', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<A-z>', '')
 vim.keymap.set('n', '<C-z>', '')
 
