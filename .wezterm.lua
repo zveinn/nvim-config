@@ -30,7 +30,7 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 end
 
 config.colors = { foreground = "#abb2bf", background = "#000000" }
-config.font = wezterm.font('FiraMono Nerd Font Medium', { weight = 'Medium', italic = false })
+config.font = wezterm.font('Hurmit Nerd Font', { weight = 'Medium', italic = false })
 
 wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
 	local xx = pane.current_working_dir
