@@ -19,69 +19,6 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 return require("packer").startup(function()
 	use "wbthomason/packer.nvim"
 
-	-- use {
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	cmd = "Copilot",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require('copilot').setup({
-	-- 			panel = {
-	-- 				enabled = true,
-	-- 				auto_refresh = true,
-	-- 				keymap = {
-	-- 					jump_prev = "[[",
-	-- 					jump_next = "]]",
-	-- 					accept = "<C-N>",
-	-- 					refresh = "gr",
-	-- 					open = "<C-t>"
-	-- 				},
-	-- 				layout = {
-	-- 					position = "bottom", -- | top | left | right
-	-- 					ratio = 0.7
-	-- 				},
-	-- 			},
-	-- 			suggestion = {
-	-- 				enabled = false,
-	-- 				auto_trigger = true,
-	-- 				debounce = 500,
-	-- 				keymap = {
-	-- 					accept = "<M-l>",
-	-- 					accept_word = false,
-	-- 					accept_line = false,
-	-- 					next = "<M-]>",
-	-- 					prev = "<M-[>",
-	-- 					dismiss = "<C-]>",
-	-- 				},
-	-- 			},
-	-- 			filetypes = {
-	-- 				yaml = false,
-	-- 				markdown = true,
-	-- 				help = false,
-	-- 				gitcommit = false,
-	-- 				gitrebase = false,
-	-- 				hgcommit = false,
-	-- 				svn = false,
-	-- 				go = true,
-	-- 				cvs = false,
-	-- 				["."] = false,
-	-- 			},
-	-- 			copilot_node_command = 'node', -- Node.js version must be > 18.x
-	-- 			server_opts_overrides = {},
-	-- 		})
-	-- 	end,
-	-- }
-	--
-	-- use {
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	after = { "copilot.lua" },
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup({
-	-- 			event = { "InsertEnter", "LspAttach" },
-	-- 			fix_pairs = true,
-	-- 		})
-	-- 	end
-	-- }
-
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use "nvim-lualine/lualine.nvim"
 	use {
@@ -103,7 +40,7 @@ return require("packer").startup(function()
 	}
 	use { "lukas-reineke/indent-blankline.nvim" }
 	use { "AndrewRadev/splitjoin.vim" }
-	use "lewis6991/gitsigns.nvim"
+	-- use "lewis6991/gitsigns.nvim"
 	use "rhysd/vim-clang-format"
 	use "fatih/vim-go"
 	use "hrsh7th/cmp-nvim-lsp"

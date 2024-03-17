@@ -2,11 +2,7 @@ local setup, gitsigns = pcall(require, "gitsigns")
 if not setup then return end
 
 
-
 gitsigns.setup {
-	highlight                    = {
-		modified = { background = "NONE" }
-	},
 	signs                        = {
 		add          = { text = 'A', show_count = true },
 		change       = { text = 'M', show_count = true },
