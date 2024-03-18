@@ -14,7 +14,7 @@ catppuccin.setup {
 	-- 	shade = "dark",
 	-- 	percentage = 0.15, -- percentage of the shade to apply to the inactive window
 	-- },
-	transparent_background = true,
+	transparent_background = false,
 
 	no_italic = true,
 	no_bold = false,

@@ -2,7 +2,7 @@ local setup, lualine = pcall(require, "lualine")
 if not setup then return end
 
 local colors = {
-	bg       = '#000000',
+	bg       = '#080808',
 	fg       = '#bbc2cf',
 	yellow   = '#ECBE7B',
 	cyan     = '#008080',
