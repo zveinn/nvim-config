@@ -56,6 +56,7 @@ catppuccin.setup {
 				CmpBorder = { fg = C.surface2 },
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
+				WinSeparator = { bg = C.base, fg = C.base },
 				TelescopeBorder = { link = "FloatBorder" },
 			}
 		end,

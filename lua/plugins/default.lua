@@ -8,7 +8,7 @@ vim.opt.hlsearch = true
 -- vim.opt.relativenumber = true
 vim.opt.number = false
 vim.opt.signcolumn = "auto"
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3
 vim.opt.vb = true
 vim.opt.ruler = false
 vim.opt.spelllang = "en_us"
@@ -46,4 +46,6 @@ vim.cmd.fileformat = "unix"
 -- vim.cmd.autocmd = "BufNewFile * set fileformat=unix"
 vim.g.neovide_cursor_trail_legnth = 0
 vim.g.neovide_cursor_animation_length = 0
-vim.o.guifont = "Hurmit Nerd Font Mono"
+vim.opt.cursorline = true
+-- vim.o.guifont = "Hurmit Nerd Font Mono"
+vim.o.guifont = "Berkeley Mono"
