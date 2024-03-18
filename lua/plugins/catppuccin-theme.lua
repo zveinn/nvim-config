@@ -34,7 +34,7 @@ catppuccin.setup {
 	color_overrides = {
 		all = {
 			base = "#080808",
-			-- crust = "#0F0F0F"
+			crust = "#080808",
 		},
 	},
 	integrations = {
