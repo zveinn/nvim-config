@@ -17,15 +17,6 @@ mason.setup({})
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-
-
-local has_words_before = function()
-	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
-	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-end
-
-
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
@@ -196,7 +187,17 @@ local on_attach2 = function(_, bufnr)
 	--	end, '[W]orkspace [L]ist Folders')
 
 	vim.api.nvim_create_augroup('AutoFormatting', {})
-	vim.api.nvim_create_autocmd('BufWritePost', {
+
+	vim.api.nvim_create_autocmd("InsertLeave", {
+		group = 'AutoFormatting',
+		pattern = '*.*',
+		callback = function()
+			vim.lsp.buf.format()
+			vim.api.nvim_command("wall")
+		end,
+	})
+
+	vim.api.nvim_create_autocmd('BufWritePre', {
 		pattern = '*.*',
 		group = 'AutoFormatting',
 		callback = function()
@@ -204,6 +205,7 @@ local on_attach2 = function(_, bufnr)
 		end,
 	})
 end
+
 
 local lspconfig = require 'lspconfig'
 local configs = require 'lspconfig/configs'
@@ -219,7 +221,7 @@ configs.golangcilsp = {
 }
 
 lspconfig.golangci_lint_ls.setup {
-	filetypes = { 'go', 'gomod' },
+	filetypes = { 'go', 'gomod', "goenv" },
 	capabilities = capabilities,
 	on_attach = on_attach2,
 }

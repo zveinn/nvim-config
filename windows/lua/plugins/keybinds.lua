@@ -36,7 +36,8 @@ vim.keymap.set('n', '<A-;>', ':split<cr> <C-w>j')
 
 
 -- vim.keymap.set({ 'n', 'i' }, '<A-s>', '<esc> :w<cr> :!goimports -w % <cr><cr>') -- Source config
-vim.keymap.set({ 'n', 'i' }, '<A-s>', '<esc> :w<cr>') -- Source config
+vim.keymap.set({ 'n', 'i' }, '<A-s>', '<esc> :w<cr>')       -- Source config
+-- vim.keymap.set({ 'n', 'i' }, '<esc>', '<esc> :w<cr>') -- Source config
 --
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
